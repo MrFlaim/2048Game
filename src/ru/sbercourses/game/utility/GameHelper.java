@@ -11,9 +11,9 @@ public class GameHelper {
 
     private List<Integer> move(List<Integer> list) {
         List<Integer> filtredList = new ArrayList<>();
-        for (Integer integer : list) {
-            if (integer != null) {
-                filtredList.add(integer);
+        for (Integer value : list) {
+            if (value != null) {
+                filtredList.add(value);
             }
         }
         for (int i = filtredList.size(); i < list.size(); i++) {
