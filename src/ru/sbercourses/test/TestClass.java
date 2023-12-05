@@ -2,8 +2,8 @@ package ru.sbercourses.test;
 
 import ru.sbercourses.game.Game;
 import ru.sbercourses.game.Game2048;
-import ru.sbercourses.utility.board.Board;
-import ru.sbercourses.utility.board.SquareBoard;
+import ru.sbercourses.game.board.Board;
+import ru.sbercourses.game.board.SquareBoard;
 
 public class TestClass {
     public static void main(String[] args) {

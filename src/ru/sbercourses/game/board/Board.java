@@ -1,6 +1,6 @@
-package ru.sbercourses.utility.board;
+package ru.sbercourses.game.board;
 
-import ru.sbercourses.utility.Key;
+import ru.sbercourses.game.Key;
 
 import java.util.HashMap;
 import java.util.List;

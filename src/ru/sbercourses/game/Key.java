@@ -1,4 +1,4 @@
-package ru.sbercourses.utility;
+package ru.sbercourses.game;
 
 import java.util.Objects;
 

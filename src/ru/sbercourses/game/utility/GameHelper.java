@@ -1,4 +1,4 @@
-package ru.sbercourses.game;
+package ru.sbercourses.game.utility;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,7 @@
 package ru.sbercourses.game;
 
-import ru.sbercourses.utility.Direction;
-import ru.sbercourses.utility.Key;
-import ru.sbercourses.utility.board.Board;
+import ru.sbercourses.game.board.Board;
+import ru.sbercourses.game.utility.GameHelper;
 
 import java.util.ArrayList;
 import java.util.List;

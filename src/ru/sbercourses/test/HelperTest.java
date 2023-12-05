@@ -1,6 +1,6 @@
 package ru.sbercourses.test;
 
-import ru.sbercourses.game.GameHelper;
+import ru.sbercourses.game.utility.GameHelper;
 
 import static java.util.Arrays.asList;
 import static ru.sbercourses.test.BoardTest.assertEquals;

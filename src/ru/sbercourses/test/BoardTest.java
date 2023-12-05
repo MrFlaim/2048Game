@@ -1,7 +1,7 @@
 package ru.sbercourses.test;
 
-import ru.sbercourses.utility.board.Board;
-import ru.sbercourses.utility.board.SquareBoard;
+import ru.sbercourses.game.board.Board;
+import ru.sbercourses.game.board.SquareBoard;
 
 import java.util.List;
 
