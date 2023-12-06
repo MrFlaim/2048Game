@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static java.util.Arrays.asList;
-
 public class Game2048 implements Game {
     private GameHelper helper = new GameHelper();
     private Board board;
@@ -20,12 +18,21 @@ public class Game2048 implements Game {
 
     @Override
     public void init() {
-        board.fillBoard(new ArrayList<>(asList(2,4,null,16)));
+        var boardCellCount = board.getWidth() * board.getHeight();
+        var fillCellCount = 2;
+        List<Integer> valuesList = new ArrayList<>();
+        for (int i = 0; i < boardCellCount; i++) {
+            valuesList.add(null);
+        }
+        for (int i = 0; i < fillCellCount; i++) {
+            addItem();
+        }
+        board.fillBoard(valuesList);
     }
 
     @Override
     public boolean canMove() {
-        return board.availableSpace().isEmpty();
+        return !board.availableSpace().isEmpty();
     }
 
     @Override
@@ -34,32 +41,35 @@ public class Game2048 implements Game {
             case UP:
                 for (int column = 0; column < board.getWidth(); column++) {
                     List<Integer> values = board.getValues(board.getColumn(column));
-                    helper.moveAndMergeEqual(values);
+                    board.fillBoard(helper.moveAndMergeEqual(values));
                 }
             case DOWN:
                 for (int column = board.getWidth(); column > 0; column--) {
                     List<Integer> values = board.getValues(board.getColumn(column));
-                    helper.moveAndMergeEqual(values);
+                    board.fillBoard(helper.moveAndMergeEqual(values));
                 }
             case LEFT:
                 for (int row = 0; row < board.getHeight(); row++) {
                     List<Integer> values = board.getValues(board.getRow(row));
-                    helper.moveAndMergeEqual(values);
+                    board.fillBoard(helper.moveAndMergeEqual(values));
                 }
             case RIGHT:
                 for (int row = board.getHeight(); row > 0; row++) {
                     List<Integer> values = board.getValues(board.getRow(row));
-                    helper.moveAndMergeEqual(values);
+                    board.fillBoard(helper.moveAndMergeEqual(values));
                 }
         }
     }
 
     @Override
     public void addItem() {
-        List<Key> avalibleList = board.availableSpace();
-        Key randomAvalibleKey = avalibleList.get(random.nextInt(avalibleList.size()));
-        board.addItem(randomAvalibleKey, random.nextInt(5));
-
+        var avalibleList = board.availableSpace();
+        var randomAvalibleKey = avalibleList.get(random.nextInt(avalibleList.size()));
+        if (random.nextFloat() < 0.9) {
+            board.addItem(randomAvalibleKey, 2);
+        } else {
+            board.addItem(randomAvalibleKey, 4);
+        }
     }
 
     @Override

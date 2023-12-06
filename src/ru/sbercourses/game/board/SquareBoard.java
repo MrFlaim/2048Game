@@ -25,7 +25,7 @@ public class SquareBoard extends Board {
     @Override
     public List<Key> availableSpace() {
         List<Key> nullKeyList = new ArrayList<>();
-        for (Key key : board.keySet()) {
+        for (var key : board.keySet()) {
             if (board.get(key) == null) {
                 nullKeyList.add(key);
             }
